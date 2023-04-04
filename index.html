@@ -12,9 +12,6 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0228a07db843284dfc2587a8dbb02bf5&libraries=services"></script>
 <script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>
 <script>
-
-    window.addEventListener("message", onReceivedPostMessage, false);
-    
     //iOS 로 Message handler 전달
     function postMessageToiOS(postData) {
         window.webkit.messageHandlers.callBackHandler.postMessage(postData);
@@ -30,7 +27,6 @@
             address = data.jibunAddress
           }
             //---------------------------
-            window.postMessageToiOS(address);
             var geocoder = new kakao.maps.services.Geocoder();
             geocoder.addressSearch(address, function(result, status) {
                 // 정상적으로 검색이 완료됐으면 
