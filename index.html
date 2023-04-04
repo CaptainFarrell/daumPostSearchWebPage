@@ -25,8 +25,8 @@
     function execDaumPostcode() {
       new daum.Postcode({
         oncomplete: function(data) {
+          /*
           var jibunAddress = ""
-
           if (data.jibunAddress == "") {
             jibunAddress = data.autoJibunAddress
           } else if (data.autoJibunAddress == "") {
@@ -38,6 +38,8 @@
               jibunAddress : jibunAddress,
               zonecode : data.zonecode
           };
+          */
+          var postData = data
           window.postMessageToiOS(postData);
         },
         width : '100%',
