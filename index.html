@@ -25,13 +25,10 @@
     function execDaumPostcode() {
       new daum.Postcode({
         oncomplete: function(data) {
-          var address = ""
-          if (data.jibunAddress == "") {
-            address = data.autoJibunAddress
-          } else if (data.autoJibunAddress == "") {
+          var address = data.roadAddress
+          if (data.roadAddress == "") {
             address = data.jibunAddress
           }
-          
             //---------------------------
             geocoder.addressSearch(address, function(result, status) {
                 // 정상적으로 검색이 완료됐으면 
