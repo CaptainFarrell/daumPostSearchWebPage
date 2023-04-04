@@ -14,11 +14,13 @@
 <script>
 
     window.addEventListener("message", onReceivedPostMessage, false);
-
+    
+    //iOS 로 Message handler 전달
     function postMessageToiOS(postData) {
         window.webkit.messageHandlers.callBackHandler.postMessage(postData);
     }
 
+    // 바디 로드시 호출
     var element_layer = document.getElementById('layer');
     function execDaumPostcode() {
       new daum.Postcode({
