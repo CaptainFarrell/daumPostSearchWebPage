@@ -43,7 +43,10 @@
                         position: coords
                     });
                     window.postMessageToiOS(marker);
-                } 
+                 }
+                 else {
+                     window.postMessageToiOS('error');
+                 }
             });  
             //---------------------------
         },
