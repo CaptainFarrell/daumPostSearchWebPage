@@ -31,6 +31,7 @@
             address = data.jibunAddress
           }
             //---------------------------
+            var geocoder = new kakao.maps.services.Geocoder();
             geocoder.addressSearch(address, function(result, status) {
                 // 정상적으로 검색이 완료됐으면 
                  if (status === kakao.maps.services.Status.OK) {
