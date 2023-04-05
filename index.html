@@ -31,7 +31,7 @@
             geocoder.addressSearch(address, function(result, status) {
                 // 정상적으로 검색이 완료됐으면 
                  if (status === kakao.maps.services.Status.OK) {
-                    window.postMessageToiOS(result[0].y + ',' + result[0].x);
+                    window.postMessageToiOS(result[0].y + ',' + result[0].x + ',' + data.bname + ',' + data.sigungu);
                  }
                  else {
                      window.postMessageToiOS('error');
